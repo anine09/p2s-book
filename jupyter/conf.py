@@ -18,7 +18,8 @@ nitpicky = True
 
 language = "zh_CN"
 html_theme = "furo"
-html_title = "聪明办法学 Python"
+html_title = "<div align=center><small>聪明办法学 Python</small></div>"
+html_logo = "./image/datawhale_logo.png"
 html_theme_options = {
     "announcement": "聪明办法学 Python 在线文档 Beta 测试",
     "source_repository": "https://github.com/anine09/p2s-book",
