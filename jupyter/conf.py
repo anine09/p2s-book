@@ -21,12 +21,12 @@ html_theme = "furo"
 html_title = "聪明办法学 Python"
 html_theme_options = {
     "announcement": "聪明办法学 Python 在线文档 Beta 测试",
-    "source_repository": "https://github.com/pradyunsg/furo/",
+    "source_repository": "https://github.com/anine09/p2s-book",
     "source_branch": "main",
     "source_directory": "docs/",
 
 }
 
+nb_number_source_lines = True
 nb_execution_mode = 'off'
 execution_in_temp = True
-number_source_lines = True
