@@ -3,6 +3,7 @@ extensions = [
     'sphinx_copybutton',             # sphinx-copybutton.readthedocs.io
     'sphinx_design',                 # github.com/executablebooks/sphinx-design
     'sphinx_togglebutton',           # sphinx-togglebutton.readthedocs.io
+    "sphinx.ext.githubpages",
 ]
 
 myst_enable_extensions = ['colon_fence', 'deflist', 'dollarmath', 'html_image', 'substitution']
