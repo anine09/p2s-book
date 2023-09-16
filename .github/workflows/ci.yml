@@ -1,16 +1,18 @@
 name: Build and Deploy Docs
-
-on:
+on: 
   push:
     branches:
       - main
-permissions:
-  contents: write
+
 jobs:
-  build:
+
+  build-docs:
+
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -24,16 +26,18 @@ jobs:
     - name: Build documentation
       run: sphinx-build ./jupyter docs
 
-    - name: Commit documentation
+    - name: Setup Git
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add -f docs/
-        git commit -m "Update documentation" || true
-        
+        git config user.name "GitHub Action"
+        git config user.email "action@github.com"
+
+    - name: Commit changes
+      run: |
+        git add ./docs
+        git commit -m "Build Docs"
+
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        key: ${{ secrets.DEPLOY_KEY }}
-        branch: gh-pages
+        branch: ${{ github.ref }}
