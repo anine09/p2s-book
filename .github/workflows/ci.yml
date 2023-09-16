@@ -1,0 +1,33 @@
+name: learn python the smart way online book
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      
+      - name: Build docs
+        run: sphinx-build.exe ./jupyter docs
+    
+      - name: Create docs branch
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: gh-pages
+
+      - name: Deploy docs
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          branch: gh-pages
+          folder: docs
