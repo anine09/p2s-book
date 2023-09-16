@@ -1,7 +1,7 @@
 ---
 sd_hide_title: true
+hide-toc: true
 ---
-
 # sphinx-design
 
 ::::::{div} landing-title
@@ -15,10 +15,11 @@ sd_hide_title: true
 :::{grid-item}
 :columns: 12 4 4 4
 
-```{image} ./image/white_datawhale_logo.png
+```{image}
 :width: 300px
 :class: sd-m-auto sd-animate-grow50-rot20
 ```
+
 :::
 
 :::{grid-item}
@@ -28,7 +29,7 @@ sd_hide_title: true
 
 简明且系统的 Python 入门教程
 
-```{button-link} https://datawhalechina.github.io/learn-python-the-smart-way-v2/
+```{button-link}
 :ref-type: doc
 :outline:
 :color: white
@@ -53,6 +54,7 @@ sd_hide_title: true
 :caption: 目录
 chapter_0-Installation.ipynb
 ```
+
 :::
 
 :::{dropdown} Chapter 1 启航 Getting Started
@@ -65,6 +67,7 @@ chapter_0-Installation.ipynb
 :maxdepth: 2
 chapter_1-Getting_Started.ipynb
 ```
+
 :::
 ::::
 
